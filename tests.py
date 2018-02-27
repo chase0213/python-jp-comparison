@@ -29,12 +29,16 @@ def calc_time(func, *args):
 def get_test_cases():
     return [
       {
-        "title": "単語（漢字・ひらがなのみ）",
-        "body": "単語",
+        "title": "単語（ひらがなのみ）",
+        "body": "たんご",
       },
       {
         "title": "単語（カタカナのみ)",
         "body": "タンゴ",
+      },
+      {
+        "title": "単語（漢字・ひらがなのみ）",
+        "body": "単ご",
       },
       {
         "title": "短文（漢字・ひらがなのみ）",
@@ -130,7 +134,7 @@ def test_jaconv():
         calc_time(jaconv.kata2hira, body)
         logging.debug("result: %s" % jaconv.kata2hira(body))
 
-        logging.info("ひらがな（全角） to かたかな（半角） for %s" % title)
+        logging.info("ひらがな（全角） to カタカナ（半角） for %s" % title)
         calc_time(jaconv.hira2hkata, body)
         logging.debug("result: %s" % jaconv.hira2hkata(body))
 
@@ -160,7 +164,7 @@ def test_cnvk():
         calc_time(cnvk.convert, body, cnvk.Z_KATA, cnvk.KATA2HIRA)
         logging.debug("result: %s" % cnvk.convert(body, cnvk.Z_KATA, cnvk.KATA2HIRA))
 
-        logging.info("ひらがな（全角） to ひらがな（半角） for %s" % title)
+        logging.info("ひらがな（全角） to カタカナ（半角） for %s" % title)
         calc_time(cnvk.convert, body, cnvk.HIRA2KATA, cnvk.H_KATA)
         logging.debug("result: %s" % cnvk.convert(body, cnvk.KATA2HIRA, cnvk.H_KATA))
 
@@ -188,7 +192,7 @@ def test_mojimoji():
         logging.info("カタカナ（全角） to ひらがな（全角） for %s" % title)
         logging.info("Not implemented")
 
-        logging.info("ひらがな（全角） to ひらがな（半角） for %s" % title)
+        logging.info("ひらがな（全角） to カタカナ（半角） for %s" % title)
         logging.info("Not implemented")
 
         logging.info("半角 to 全角 for %s" % title)
@@ -215,7 +219,7 @@ def test_zenhan():
         logging.info("カタカナ（全角） to ひらがな（全角） for %s" % title)
         logging.info("Not implemented")
 
-        logging.info("ひらがな（全角） to ひらがな（半角） for %s" % title)
+        logging.info("ひらがな（全角） to カタカナ（半角） for %s" % title)
         logging.info("Not implemented")
 
         logging.info("半角 to 全角 for %s" % title)
@@ -242,7 +246,7 @@ def test_rfzenhan():
         logging.info("カタカナ（全角） to ひらがな（全角） for %s" % title)
         logging.info("Not implemented")
 
-        logging.info("ひらがな（全角） to ひらがな（半角） for %s" % title)
+        logging.info("ひらがな（全角） to カタカナ（半角） for %s" % title)
         logging.info("Not implemented")
 
         logging.info("半角 to 全角 for %s" % title)
