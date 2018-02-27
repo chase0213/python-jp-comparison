@@ -1,0 +1,5 @@
+jaconv==0.2.3
+mojimoji==0.0.6
+nkf==0.2.0
+rfZenHan==0.4
+zenhan==0.5.2
